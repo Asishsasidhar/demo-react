@@ -1,0 +1,57 @@
+{
+    "recommendedproductsData": [
+      {
+        "img": "./images/product6.jpg",
+        "title": "Urban Data Intelligence Tool",
+        "description": "Collect data from all sources",
+        "attributes": [ "Use artificial intelligence and machine learning to drive smooth and efficient operation and smart planning" ],
+        "price": "",
+        "priceDesc": "Let us tailor the right solution for your city",
+        "likes": "25",
+        "action": "Learn More"
+  
+      },
+      {
+        "img": "./images/product9.png",
+        "title": "Residents Sensing and Engagement",
+        "description": "Seamless communicate and gather residents' input over social media",
+        "attributes": [ "Plan, strategise, budget and measure the impact of every investment" ],
+        "price": "$50",
+        "priceDesc": "Per 1000 residents per year.",
+        "likes": "48",
+        "action": "Learn More"
+  
+      },
+      {
+        "img": "./images/product10.png",
+        "title": "Safe Micro-Mobility",
+        "description": "Cellular based accident prevention solutions.",
+        "attributes": [ "Real-time pre collision alerts to ALL road users using smartphones or connected vehicles" ],
+        "price": "$20",
+        "priceDesc": "Per 1000 residents per year.",
+        "likes": "59",
+        "action": "Learn More"
+      },
+      {
+        "img": "./images/product4.jpg",
+        "title": "City Application",
+        "description": "Keep your citizens connected, engaged and informed. Create a new mobile app.",
+        "attributes": [ "Feedbacks and Reports", "Alerts and Notification", "Economy and Local Business Boost" ],
+        "price": "",
+        "priceDesc": "Let us design the right solution for your city.",
+        "likes": "45",
+        "action": "Learn More"
+  
+      },
+      {
+        "img": "./images/product7.jpg",
+        "title": "Traffic Lights Modernization",
+        "description": "Traffic Lights Modernization",
+        "attributes": [ "Priority Traffic", "Speed to green", "Alerts for connected cars" ],
+        "price": "$10,000",
+        "priceDesc": "Per traffic light for 3 years.",
+        "likes": "45",
+        "action": "Learn More"
+      }
+    ]
+  }
