@@ -7,7 +7,7 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import './Product.css';
 
-import {UserContext} from '../../App'
+import {UserContext} from '../../Main'
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 export const Products = (props) => {
@@ -19,7 +19,7 @@ export const Products = (props) => {
     let cartUpdate = (product) => {
         console.log("product: ",product)
         userContext.dispatch({ "type": product.action, "value": product })
-        
+         
     }
 
     let searchedData = (data, searchtext) => {
@@ -45,10 +45,13 @@ export const Products = (props) => {
         }
         return true
     }
-    let filteredData = productsData ? productsData.filter(checkProdFilter) : []
-    let search_text = userContext.UserState.searchText
+    console.log("producsL",productsData)
+    let filteredData = productsData ? (filters ? productsData.filter(checkProdFilter): productsData) : []
+    console.log("filtered Data: ",filteredData)
+    let search_text = userContext ? userContext.UserState.searchText : ""
+    console.log("searchText: ",search_text)
     filteredData = (filteredData.length > 0 &&  search_text!= "") ? searchedData(filteredData,search_text) : filteredData
-    console.log("filtered: ", filteredData)
+    console.log("search filtered: ", filteredData)
         // console.log("hello"+props.searchProduct);
         return (
             <div className="allsolutionsclass">
@@ -56,7 +59,7 @@ export const Products = (props) => {
                 <GridList cellHeight={'auto'} spacing={4} className='gridList' cols={3}>
                     
                 
-                    {filteredData.map((product) => (
+                    {filteredData && filteredData.map((product) => (
                         
                         <GridListTile key={product.id} cols={1}>
                             <Card className="card">

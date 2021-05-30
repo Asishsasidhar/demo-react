@@ -3,7 +3,7 @@ import {AllSolutions} from "../AllSolutions"
 import Requirments from './requirments';
 import {Products}from "../Products"
 import { FilterMenu } from "../FilterMenu"
-import {UserContext} from "../../App"
+import {UserContext} from "../../Main"
 import productData from './productData';
 export const ContentScreen = () => {
   const [filterState, setFilterState] = useState([])
@@ -24,7 +24,7 @@ export const ContentScreen = () => {
           <FilterMenu filters={filterState} updateFilters={setFilterState} />
           {filterState.length > 0 && <><h1>Recommended Solutions </h1><Products products={productsData} filters={filterState} ></Products></>}
           <h1>All Solutions </h1>
-          <Products products={productsData} filters={[]} ></Products>
+          <Products products={productsData} filters={[]}  ></Products>
           </div>
     </>
     )

@@ -13,7 +13,10 @@ import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import {UserContext} from "../../App"
+import { UserContext } from "../../Main"
+import {
+  Link, 
+} from "react-router-dom"
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -79,7 +82,6 @@ export const  Header = ()=>  {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const userContext = useContext(UserContext)
   const isMenuOpen = Boolean(anchorEl);
-
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -139,10 +141,12 @@ export const  Header = ()=>  {
             />
           </div>
           <div className={classes.grow} />
-          <div className={classes.sectionDesktop} onClick={()=> console.log(userContext)}>
+          <div className={classes.sectionDesktop} >
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={userContext.UserState ? userContext.UserState.cartItems.length: 0} color="secondary">
-                <ShoppingCartIcon/>
+                <Link to="/cart-items">
+                  <ShoppingCartIcon />
+                  </Link>
               </Badge>
             </IconButton>
             <IconButton aria-label="show 17 new notifications" color="inherit">
