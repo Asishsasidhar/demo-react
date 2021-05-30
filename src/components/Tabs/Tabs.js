@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext} from 'react'
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import {UserContext} from '../../App'
 import {  useTheme, withStyles } from '@material-ui/core/styles';
 export const FeatureTabs = (props) => {
+    const rootContext =  useContext(UserContext)
     const [value, setValue] = React.useState(0);
     const handleChange = (event, newValue) => {
         setValue(newValue);
+        rootContext.dispatch({"type": 'select-tab',"value": newValue})
     }
     
     function a11yProps(index) {

@@ -111,9 +111,25 @@ li::marker {
     
 }
 
-.addButton {
+.addButton{
     width: 8rem;
     background: #20DCEB;
+    color: #1F242B;
+    border: 1px solid #20DCEB;
+    padding: 0.4rem 0.5rem;
+    text-align: center;
+    border-radius: 8px;
+    float: right;
+    margin-right: 1rem;
+    cursor: pointer;
+    position: relative;
+    top: -1.5rem;
+    
+}
+
+.removeButton {
+    width: 8rem;
+    background: red;
     color: #1F242B;
     border: 1px solid #20DCEB;
     padding: 0.4rem 0.5rem;

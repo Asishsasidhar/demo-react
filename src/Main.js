@@ -10,7 +10,8 @@ const Main = () => {
     return (
         <BrowserRouter>
         <Switch>
-            <Route exact path="/" component={App}></Route>
+                <Route exact path="/" component={App}></Route>
+                {/* <Route exact path="/cart-items" component={CartItems}></Route> */}
             {/* <Route exact path="/Marketplace" component={Mainscreen}></Route>
             <Route exact path="/Requirments" component={Requirments}></Route> */}
         </Switch>

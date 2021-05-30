@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -13,6 +13,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import {UserContext} from "../../App"
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -76,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
 export const  Header = ()=>  {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
-
+  const userContext = useContext(UserContext)
   const isMenuOpen = Boolean(anchorEl);
 
   const handleProfileMenuOpen = (event) => {
@@ -125,6 +126,11 @@ export const  Header = ()=>  {
             </div>
             <InputBase
               placeholder="Search…"
+              onChange={(e) => {
+                userContext.dispatch({
+                  "type": "search-text",
+                  "value": e.target.value
+              })}}
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -133,9 +139,9 @@ export const  Header = ()=>  {
             />
           </div>
           <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
+          <div className={classes.sectionDesktop} onClick={()=> console.log(userContext)}>
             <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge badgeContent={userContext.UserState ? userContext.UserState.cartItems.length: 0} color="secondary">
                 <ShoppingCartIcon/>
               </Badge>
             </IconButton>
